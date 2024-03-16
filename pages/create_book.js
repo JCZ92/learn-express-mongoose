@@ -11,7 +11,7 @@ function getGenre(name) {
 }
 
 exports.new_book = async (res, family_name, first_name, genre_name, title) => {
-  let author = await getAuthor(family_name, first_name).exec();
+  let author = await getAuthor(family_name, first_name).exec(); // exec() to execute asynchronously
   let genre = await getGenre(genre_name).exec();
   let book = Book({
     title: title,
